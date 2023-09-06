@@ -2,15 +2,19 @@ require_relative "boot"
 
 require "rails/all"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+require_relative "../lib/tasks/middlewares/access_token_middleware.rb"
 
 module CabSystem
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('lib','tasks','middlewares')
+    config.middleware.use Middlewares::AccessTokenMiddleware
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
