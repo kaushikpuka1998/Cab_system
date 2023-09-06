@@ -33,3 +33,7 @@ Screenshots:
 <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/ef760553-8dd4-4c45-a33d-d428d9c7fb14" width="75%" height="50%" />
 <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/63d1730d-898c-4825-89f5-9a9e6cf62000" width="75%" height="50%" />
 
+After Custom Middleware Implementation:
+<img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/ce9f90aa-182d-4e99-9737-6125bc590e97" width="75%" height="50%" />
+<img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/429f5977-c2a3-449a-8bac-6f1a045f46bf" width="75%" height="50%" />
+
