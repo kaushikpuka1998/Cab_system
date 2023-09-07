@@ -39,6 +39,11 @@ class DriversController < ApplicationController
     render json: driver.bookings
   end
 
+  def cab_details_by_driver_id
+    driver = Driver.find(params[:id])
+    render json: driver.cab
+  end
+
 
 
   private

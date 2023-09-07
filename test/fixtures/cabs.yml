@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  licence_number: MyString
+  brand: MyString
+  color: MyString
+  size: MyString
+  availability: false
+  driver_id: 1
+
+two:
+  licence_number: MyString
+  brand: MyString
+  color: MyString
+  size: MyString
+  availability: false
+  driver_id: 1
