@@ -25,7 +25,7 @@ class DriversController < ApplicationController
 
 
   def update_driver
-    driver = Driver.find(params[:id])
+    driver = Driver.find_by(id: params[:id])
     if driver.update(driver_params)
       render json: driver
     else  
@@ -35,13 +35,22 @@ class DriversController < ApplicationController
 
 
   def get_order_details_by_driver_id
-    driver = Driver.find(params[:id])
-    render json: driver.bookings
+    driver = Driver.find_by(id: params[:id])
+    if driver.nil?
+      render json: {"result" => "No bookings found"}
+    else
+      render json: driver.bookings
+    end
+      
   end
 
   def cab_details_by_driver_id
-    driver = Driver.find(params[:id])
-    render json: driver.cab
+    driver = Driver.find_by(id: params[:id])
+    if driver.nil?
+      render json: {"result" => "No cab details found"}
+    else
+      render json: driver.cab
+    end
   end
 
 
