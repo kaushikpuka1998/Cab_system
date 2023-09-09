@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   put "/update_driver/:id", to: "drivers#update_driver"
   get "/cabdetailsbydriverid/:id", to: "drivers#cab_details_by_driver_id"
   get "/get_order_details_by_driver_id/:id", to: "drivers#get_order_details_by_driver_id"
+
+
+  get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id"
 end

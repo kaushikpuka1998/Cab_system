@@ -53,8 +53,6 @@ class DriversController < ApplicationController
     end
   end
 
-
-
   private
 
   def driver_params
