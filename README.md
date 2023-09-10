@@ -41,7 +41,7 @@ Screenshots:
 <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/ef760553-8dd4-4c45-a33d-d428d9c7fb14" width="75%" height="50%" />
 <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/63d1730d-898c-4825-89f5-9a9e6cf62000" width="75%" height="50%" />
 
-Driver Details with Location:
+Driver Details with Location: </br>
 <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/7e7a29a5-5325-46dd-a1e4-4d439ec3732a" width="75%" height="50%" />
 
 After Custom Middleware Implementation:
