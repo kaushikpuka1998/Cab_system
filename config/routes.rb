@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post "/cablistgivenlocation", to: "cabs#cab_list_given_location"
   
 
+
+  #driversController
   get "/available_drivers", to: "drivers#available_driver"
   get "/not_available_drivers", to: "drivers#not_available_driver"
   post "/create_driver", to: "drivers#create_driver"
@@ -17,6 +19,6 @@ Rails.application.routes.draw do
   get "/cabdetailsbydriverid/:id", to: "drivers#cab_details_by_driver_id"
   get "/get_order_details_by_driver_id/:id", to: "drivers#get_order_details_by_driver_id"
 
-
+  #transactionsController
   get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id"
 end
