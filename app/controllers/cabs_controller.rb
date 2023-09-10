@@ -16,4 +16,23 @@ class CabsController < ApplicationController
             render json: {"cab" => cab, "driver" => cab.driver, "location" => cab.location}
         end
     end
+
+    def cab_list_given_location
+        latitude = params[:latitude]
+        longitude = params[:longitude]
+
+        cablist =  Location.finding_fiftykm_nearest_all_cabs(latitude, longitude)
+        if cablist.nil?
+            render json: {"result" => "Outside the range"}
+        else
+            cabs = cablist.map{|cab| cab_detail(cab.cab)}
+            render json: {cabs: cabs}
+        end
+    end
+
+
+    private
+    def cab_detail(cab)
+        {cab: cab, driver: cab.driver, location: cab.location}
+    end
 end
