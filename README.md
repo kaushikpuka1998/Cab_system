@@ -34,6 +34,26 @@ Models: </br>
 5.Rider </br>
 6.Transaction </br>
 
+
+Routes </br>
+#CabsController
+        get "/allcabs", to: "cabs#all_cabs" </br>
+        post "/cabdetailsbylicence", to: "cabs#cab_details_by_licence" </br>
+        post "/cablistgivenlocation", to: "cabs#cab_list_given_location" </br>
+  
+
+
+#driversController
+        get "/available_drivers", to: "drivers#available_driver" </br>
+        get "/not_available_drivers", to: "drivers#not_available_driver" </br>
+        post "/create_driver", to: "drivers#create_driver"</br>
+        put "/update_driver/:id", to: "drivers#update_driver" </br>
+        get "/cabdetailsbydriverid/:id", to: "drivers#cab_details_by_driver_id" </br>
+        get "/get_order_details_by_driver_id/:id", to: "drivers#get_order_details_by_driver_id" </br>
+
+#transactionsController
+      get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id" </br>
+
 API Outcome:
 Screenshots:
 
