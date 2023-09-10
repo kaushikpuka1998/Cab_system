@@ -4,9 +4,9 @@ class TransactionController < ApplicationController
 
         driver = Driver.find_by(id: params[:id])
         if driver.nil?
-          render json: {"result" => "Params Missing or Invalid"}
+            render json: {"result" => "Params Missing or Invalid"}
         else
-          render json: { "Driver" => driver, 
+            render json: { "Driver" => driver, 
                          "earnings_today" => Transaction.select_day_earning(params[:id]) 
                         }
         end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   #CabsController
   get "/allcabs", to: "cabs#all_cabs"
+  post "/cabdetailsbylicence", to: "cabs#cab_details_by_licence"
   
 
   get "/available_drivers", to: "drivers#available_driver"

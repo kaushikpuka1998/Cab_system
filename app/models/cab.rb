@@ -5,4 +5,5 @@ class Cab < ApplicationRecord
     validates :brand, presence: true
     validates :size, presence: true
     validates :driver_id, presence:true, uniqueness: true
+    has_one :location, class_name: "Location", foreign_key: "cab_id", dependent: :destroy
 end
