@@ -21,4 +21,8 @@ Rails.application.routes.draw do
 
   #transactionsController
   get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id"
+
+
+  #riderController
+  post "/price_calculator", to: "rider#price_calculator"
 end
