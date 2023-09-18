@@ -54,7 +54,7 @@ Routes </br>
 #transactionsController
       get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id" </br>
 
-All URL Documentation: https://documenter.getpostman.com/view/9556363/2s9YC8uqZ9
+All URL Documentation as Localhost: https://documenter.getpostman.com/view/9556363/2s9YC8uqZ9 
 
 API Outcome:
 Screenshots:
