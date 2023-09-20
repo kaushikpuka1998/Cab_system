@@ -55,14 +55,14 @@ TransactionsController
         get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id" </br>
 
 
-All URL Documentation as Localhost:
+<h1> All URL Documentation as Localhost(After installing all the routes will be indicate) </h1>
       https://documenter.getpostman.com/view/9556363/2s9YC8uqZ9 
 
 
 
-API Outcome:
+<h1>API Outcome: </h1>
 <div>
-   Screenshots:
+   <h1> Screenshots </h1>
 
    <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/cd887483-0eb0-4785-8d2c-6558f656d601" width="100%" height="50%" />
    <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/ef760553-8dd4-4c45-a33d-d428d9c7fb14" width="100%" height="50%" />
