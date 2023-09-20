@@ -1,13 +1,13 @@
+# frozen_string_literal: true
+
 require 'json'
 
+# This class manages the actions related to drivers
 class DriversController < ApplicationController
-  
-  
   def available_driver
     drivers = Driver.all
     render json: drivers
   end
-
 
   def not_available_driver
     drivers = Driver.available.invert_where
@@ -23,31 +23,28 @@ class DriversController < ApplicationController
     end
   end
 
-
   def update_driver
     driver = Driver.find_by(id: params[:id])
     if driver.update(driver_params)
       render json: driver
-    else  
+    else
       render json: driver.errors
     end
   end
 
-
-  def get_order_details_by_driver_id
+  def order_details_by_driver_id
     driver = Driver.find_by(id: params[:id])
     if driver.nil?
-      render json: {"result" => "No bookings found"}
+      render json: { 'result' => 'No bookings found' }
     else
       render json: driver.bookings
     end
-      
   end
 
   def cab_details_by_driver_id
     driver = Driver.find_by(id: params[:id])
     if driver.nil?
-      render json: {"result" => "No cab details found"}
+      render json: { 'result' => 'No cab details found' }
     else
       render json: driver.cab
     end
@@ -58,5 +55,4 @@ class DriversController < ApplicationController
   def driver_params
     params.require(:driver).permit(:name, :phone, :availability, :licence)
   end
-  
 end
