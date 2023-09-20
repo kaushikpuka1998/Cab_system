@@ -31,6 +31,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "pre-commit", require: false
 gem "rubocop","~> 1.18.1"
+gem 'execjs'
 gem 'rubocop-rails', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
