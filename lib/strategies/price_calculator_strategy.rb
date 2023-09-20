@@ -30,7 +30,7 @@ module Strategies
 
       price += per_km_price * (@distance - tmp_dst) if (@distance - tmp_dst).positive?
 
-      put "checking Hooks"
+      puts price
       price
     end
 
