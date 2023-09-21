@@ -1,4 +1,4 @@
-class CreateCabs < ActiveRecord::Migration[7.0]
+class CreateCabs < ActiveRecord::Migration
   def change
     create_table :cabs do |t|
       t.string :licence_number

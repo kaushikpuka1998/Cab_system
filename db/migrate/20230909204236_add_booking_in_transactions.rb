@@ -1,4 +1,4 @@
-class AddBookingInTransactions < ActiveRecord::Migration[7.0]
+class AddBookingInTransactions < ActiveRecord::Migration
   def change
     add_column :transactions, :booking_id, :integer
   end

@@ -1,4 +1,4 @@
-class CreateDrivers < ActiveRecord::Migration[7.0]
+class CreateDrivers < ActiveRecord::Migration
   def change
     create_table :drivers do |t|
       t.string :name

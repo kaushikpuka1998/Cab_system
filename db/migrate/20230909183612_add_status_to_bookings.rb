@@ -1,4 +1,4 @@
-class AddStatusToBookings < ActiveRecord::Migration[7.0]
+class AddStatusToBookings < ActiveRecord::Migration
   def change
     add_column :bookings, :status, :string
   end

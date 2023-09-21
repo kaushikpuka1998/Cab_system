@@ -1,4 +1,4 @@
-class DriverIdChangeToCabIdInLocations < ActiveRecord::Migration[7.0]
+class DriverIdChangeToCabIdInLocations < ActiveRecord::Migration
   def change
     rename_column :locations, :driver_id, :cab_id
   end

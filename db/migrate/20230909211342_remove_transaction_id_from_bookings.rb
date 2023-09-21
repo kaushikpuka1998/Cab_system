@@ -1,4 +1,4 @@
-class RemoveTransactionIdFromBookings < ActiveRecord::Migration[7.0]
+class RemoveTransactionIdFromBookings < ActiveRecord::Migration
   def change
     remove_column :bookings, :transaction_id, :integer
   end
