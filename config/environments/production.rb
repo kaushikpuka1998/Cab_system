@@ -12,7 +12,7 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.hosts << "http://13.49.78.127/"
+  config.hosts << "http://13.49.78.127:3000/"
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

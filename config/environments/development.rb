@@ -17,7 +17,7 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
-  config.hosts << "http://13.49.78.127/"
+  config.hosts << "http://13.49.78.127:3000/"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
