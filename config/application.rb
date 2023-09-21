@@ -12,6 +12,7 @@ module CabSystem
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.hosts << "http://13.49.78.127"
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib','tasks','middlewares')
     config.middleware.use Middlewares::AccessTokenMiddleware
