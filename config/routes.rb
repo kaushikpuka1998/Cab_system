@@ -24,4 +24,10 @@ Rails.application.routes.draw do
 
   # riderController
   post '/price_calculator', to: 'rider#price_calculator'
+
+  #BookingController
+  post '/create_booking', to: 'booking#create_booking'
+
+  #placeController
+  post '/create_place', to: 'place#create_place'
 end

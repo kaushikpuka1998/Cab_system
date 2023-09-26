@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
   belongs_to :cab, class_name: "Cab", optional: true
   belongs_to :rider, class_name: "Rider", optional: true
+  belongs_to :place, class_name: "Place", optional: true
   validates :latitude, presence: true
   validates :longitude, presence: true
 

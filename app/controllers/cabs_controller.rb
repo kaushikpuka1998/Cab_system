@@ -22,7 +22,10 @@ class CabsController < ApplicationController
   def cab_list_given_location
     latitude = params[:latitude]
     longitude = params[:longitude]
-
+    if latitude.nil? || longitude.nil?
+      render json: { 'result' => 'Params Missing or Invalid' }
+      return
+    end
     cablist = Location.finding_fiftykm_nearest_all_cabs(latitude, longitude)
     if cablist.nil?
       render json: { 'result' => 'Outside the range' }
