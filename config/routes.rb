@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/allcabs', to: 'cabs#all_cabs'
   post '/cabdetailsbylicence', to: 'cabs#cab_details_by_licence'
   post '/cablistgivenlocation', to: 'cabs#cab_list_given_location'
+  post '/find_cab', to: 'cabs#find_cab'
 
   # driversController
   get '/available_drivers', to: 'drivers#available_driver'
@@ -24,9 +25,6 @@ Rails.application.routes.draw do
 
   # riderController
   post '/price_calculator', to: 'rider#price_calculator'
-
-  #BookingController
-  post '/create_booking', to: 'booking#create_booking'
 
   #placeController
   post '/create_place', to: 'place#create_place'

@@ -4,5 +4,5 @@ class Driver < ApplicationRecord
   validates :licence, presence: true, uniqueness: true
   scope :available, -> { where(availability: true) }
   has_many :bookings, dependent: :destroy
-  has_one :cab, dependent: :destroy
+  has_one :cab, foreign_key: "driver_id", dependent: :destroy
 end

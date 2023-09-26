@@ -1,4 +1,4 @@
-class AdditionRiderIdColumnBookingTable < ActiveRecord::Migration[7.0]
+class AdditionRiderIdColumnBookingTable < ActiveRecord::Migration
   def change
     add_column :bookings, :rider_id, :integer
     add_index :bookings, :rider_id

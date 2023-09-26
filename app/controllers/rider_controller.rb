@@ -5,7 +5,8 @@ require 'json'
 # This class represents the Rider Controller in the Cab System application
 class RiderController < ApplicationController
   def price_calculator
-    distance = params[:distance]
+    distance = Math.sqrt((params[:current_latitude] - params[:destination_latitude]).abs**2 +
+    (params[:current_longitude] - params[:destination_longitude]).abs**2) * 100
     cab_type = params[:cab_type]
     case cab_type
     when 'prime'
