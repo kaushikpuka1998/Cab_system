@@ -46,6 +46,20 @@ class DriversController < ApplicationController
     end
   end
 
+  def update_driver_availability
+    driver = Driver.find_by(id: params[:id])
+    if driver.nil?
+      render json: { 'result' => 'No driver found' }
+    else
+      driver.update(availability: params[:availability])
+      driver.cab.update(availability: params[:availability])
+      render json: { result: "Driver successfully activated" } if driver.availability
+      unless driver.availability
+        render json: { result: "Driver successfully deactivated" }
+      end
+    end
+  end
+
   def update_driver
     driver = Driver.find_by(id: params[:id])
     if driver.update(driver_params)
