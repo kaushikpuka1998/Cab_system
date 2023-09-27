@@ -56,6 +56,7 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   ENV["REDIS_URL"] = "redis://localhost:6379/"
+  $redis = Redis.new(url: ENV['REDIS_URL'])
 
 
   # Raises error for missing translations.

@@ -11,25 +11,24 @@ class DriversController < ApplicationController
 
     cache_key = "drivers_index/#{Driver.maximum(:updated_at).to_i}"
 
-    # Try to read the cached data
-    @drivers = Rails.cache.fetch(cache_key) do
-      # If the cached data is not available or is outdated,
-      # fetch the data from the server
-      Driver.available
-    end
-
+    @redis = Redis.new(url: ENV['REDIS_URL'])
+    @cached_data = @redis.mget(cache_key, 'available_driver_updated_at')
     # Compare the timestamp of the cached data with the
     # timestamp of the data from the server
-    if @drivers.maximum(:updated_at).to_i > cache_key.split('/').last.to_i
+    if @cached_data[1].to_i < cache_key.split('/').last.to_i
       # If the data from the server is newer than the cached data,
       # expire the cache and fetch the data from the server
-      Rails.cache.delete(cache_key)
-      @drivers = Driver.available
+      @redis.mset(cache_key, Driver.available.to_a.to_json,
+                  'available_driver_updated_at',
+                  Driver.maximum(:updated_at).to_i)
+      @cached_data = @redis.mget(cache_key, 'available_driver_updated_at')
     end
 
     # Set the cache expiration time
-    expires_in 10.minutes, public: true
-    render json: @drivers
+
+    @redis.expire(cache_key, 1.hour.to_i)
+    @redis.expire('available_driver_updated_at', 1.hour.to_i)
+    render json: JSON.parse(@cached_data[0])
   end
 
   def not_available_driver
