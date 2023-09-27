@@ -18,6 +18,11 @@ class DriversController < ApplicationController
     if @cached_data[1].to_i < cache_key.split('/').last.to_i
       # If the data from the server is newer than the cached data,
       # expire the cache and fetch the data from the server
+      will_be_deleted_cache_key =
+        "drivers_index/#{@cached_data[1].to_i}"
+      if @redis.exists(will_be_deleted_cache_key).to_i == 1
+        @redis.del(will_be_deleted_cache_key)
+      end
       @redis.mset(cache_key, Driver.available.to_a.to_json,
                   'available_driver_updated_at',
                   Driver.maximum(:updated_at).to_i)
