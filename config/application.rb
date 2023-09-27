@@ -16,6 +16,7 @@ module CabSystem
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib','tasks','middlewares')
     config.middleware.use Middlewares::AccessTokenMiddleware
+    config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
