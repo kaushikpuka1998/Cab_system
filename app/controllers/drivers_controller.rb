@@ -16,6 +16,8 @@ class DriversController < ApplicationController
     # Compare the timestamp of the cached data with the
     # timestamp of the data from the server
     if @cached_data[1].to_i < cache_key.split('/').last.to_i
+
+      puts "H1"
       # If the data from the server is newer than the cached data,
       # expire the cache and fetch the data from the server
       will_be_deleted_cache_key =
@@ -27,12 +29,13 @@ class DriversController < ApplicationController
                   'available_driver_updated_at',
                   Driver.maximum(:updated_at).to_i)
       @cached_data = @redis.mget(cache_key, 'available_driver_updated_at')
+      @redis.expire(cache_key, 1.hour.to_i)
+      @redis.expire('available_driver_updated_at', 1.hour.to_i)
     end
 
+    puts "H2"
     # Set the cache expiration time
 
-    @redis.expire(cache_key, 1.hour.to_i)
-    @redis.expire('available_driver_updated_at', 1.hour.to_i)
     render json: JSON.parse(@cached_data[0])
   end
 
