@@ -20,10 +20,7 @@ module CabSystem
     config.eager_load_paths <<  Rails.root.join('workers')
     config.middleware.use Middlewares::AccessTokenMiddleware
     config.active_job.queue_adapter = :sidekiq
-    
-    
     # Configuration for the application, engines, and railties goes here.
-    #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
@@ -36,7 +33,5 @@ module CabSystem
     config.api_only = false
 
     ENV['RABBITMQ_URL'] = 'amqp://kaushik:123@localhost:5672'
-
-    
   end
 end

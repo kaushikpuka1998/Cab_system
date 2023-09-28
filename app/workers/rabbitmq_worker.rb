@@ -15,17 +15,17 @@ class RabbitmqWorker
     # Log a hit on RabbitMQ
     q.publish("Hit at #{Time.now}")
 
-    # Close the connection
-    # q.subscribe(block: true) do |delivery_info, _properties, body|
-    #   # Process the message
-    #   puts "Received message: #{body}"
+    q.subscribe(block: true) do |delivery_info, _properties, body|
+      # Process the message
+      puts "Received message: #{body}"
 
-    #   # Acknowledge the message to remove it from the queue
-    #   ch.ack(delivery_info.delivery_tag)
-    # end
-    # q.close
-    puts "RabbitMQ worker executed successfully"
-    Rails.logger.info('RabbitMQ worker executed successfully')
+      # Acknowledge the message to remove it from the queue
+      ch.ack(delivery_info.delivery_tag)
+    end
+    ch.close if ch.open?
     conn.close
+
+    Rails.logger.info('RabbitMQ worker executed successfully')
+    puts "RabbitMQ worker executed successfully"
   end
 end

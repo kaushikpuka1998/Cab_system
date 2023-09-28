@@ -1,7 +1,9 @@
 :concurrency: 5
 :verbose: true
+:retry: 15
+:timeout: 60
 :queues:
+  - default
   - queue_name_1
-  - queue_name_2
 :redis:
   url: ENV['REDIS_URL']

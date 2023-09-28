@@ -6,7 +6,8 @@ module Middlewares
 
     def call(env)
       request = ActionDispatch::Request.new(env)
-      if request.path_info.start_with?('/sidekiq') || request.headers['token'] == 'my-secret-token'
+      if request.path_info.start_with?('/sidekiq') ||
+         request.headers['token'] == 'my-secret-token'
         @app.call(env)
       else
         [401, {}, ['invalid or missing token']]
