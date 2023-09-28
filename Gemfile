@@ -15,6 +15,9 @@ gem "puma", "~> 5.0"
 gem 'sidekiq', '~> 6.5', '>= 6.5.4'
 gem 'bunny'
 gem 'sidekiq-cron', '~> 1.2', '>= 1.2.1'
+gem 'whenever', require: false
+gem 'sidekiq-status'
+gem 'capistrano-sidekiq'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

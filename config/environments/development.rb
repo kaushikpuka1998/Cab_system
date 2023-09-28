@@ -58,7 +58,7 @@ Rails.application.configure do
   ENV["REDIS_URL"] = "redis://localhost:6379/"
   $redis = Redis.new(url: ENV['REDIS_URL'])
 
-  ENV['RABBITMQ_URL'] = 'amqp://guest:guest@localhost:5672'
+  ENV['RABBITMQ_URL'] = 'amqp://kaushik:123@localhost:5672'
 
 
   # Raises error for missing translations.

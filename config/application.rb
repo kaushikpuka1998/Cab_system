@@ -13,10 +13,15 @@ module CabSystem
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.hosts.clear
+    config.active_job.queue_name_prefix = Rails.env
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib','tasks','middlewares')
+    config.autoload_paths <<  Rails.root.join('workers')
+    config.eager_load_paths <<  Rails.root.join('workers')
     config.middleware.use Middlewares::AccessTokenMiddleware
     config.active_job.queue_adapter = :sidekiq
+    
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -28,6 +33,10 @@ module CabSystem
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+    config.api_only = false
+
+    ENV['RABBITMQ_URL'] = 'amqp://kaushik:123@localhost:5672'
+
+    
   end
 end

@@ -1,0 +1,7 @@
+:concurrency: 5
+:verbose: true
+:queues:
+  - queue_name_1
+  - queue_name_2
+:redis:
+  url: ENV['REDIS_URL']
