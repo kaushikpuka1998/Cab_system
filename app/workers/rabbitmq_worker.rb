@@ -27,5 +27,6 @@ class RabbitmqWorker
 
     Rails.logger.info('RabbitMQ worker executed successfully')
     puts "RabbitMQ worker executed successfully"
+    # how add duplicate checking function here
   end
 end

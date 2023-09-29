@@ -37,6 +37,12 @@ Metrics/BlockLength:
 # Style/DocumentDynamicEvalDefinition:
 #   Enabled: true
 
+Metrics/CyclomaticComplexity:
+  Max: 15
+  Enabled: true
+Metrics/PerceivedComplexity:
+  Max: 15
+  Enabled: true
 Gemspec/DateAssignment: # (new in 1.10)
   Enabled: true
 Layout/LineEndStringConcatenationIndentation: # (new in 1.18)
