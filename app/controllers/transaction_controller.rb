@@ -10,7 +10,7 @@ class TransactionController < ApplicationController
     end
   end
 
-  def payment_details
+  def payment_transaction
     transaction = Transaction.new(payment_params)
     if transaction.nil?
       render json: { 'result' => 'Params Missing or Invalid' }
@@ -31,6 +31,7 @@ class TransactionController < ApplicationController
 
       transaction.update(invoice_id: invoice_id)
       if transaction.save
+        SendingMailWorker.perform_async(invoice_id)
         render json: { 'Transaction' => transaction, 'msg' => 'Payment Successful' }
       else
         render json: { 'msg' => 'Payment Failed' }

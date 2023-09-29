@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post '/update_driver_availability', to: 'drivers#update_driver_availability'
   # transactionsController
   get '/last_day_earning_by_driver_id/:id', to: 'transaction#last_day_earning_by_driver_id'
-  post '/payment_details' , to: 'transaction#payment_details'
+  post '/payment_details' , to: 'transaction#payment_transaction'
 
   # riderController
   post '/price_calculator', to: 'rider#price_calculator'
