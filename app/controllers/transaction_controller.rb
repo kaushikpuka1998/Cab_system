@@ -36,7 +36,6 @@ class TransactionController < ApplicationController
       else
         render json: { 'msg' => 'Payment Failed' }
       end
-
     end
   end
 
