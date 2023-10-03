@@ -32,4 +32,8 @@ Rails.application.routes.draw do
 
   #placeController
   post '/create_place', to: 'place#create_place'
+
+  #userController
+  post '/create_user', to: 'user#create_user'
+  post '/login', to: 'user#login'
 end
