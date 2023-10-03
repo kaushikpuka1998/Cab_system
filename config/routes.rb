@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   #userController
   post '/create_user', to: 'user#create_user'
   post '/login', to: 'user#login'
+  get '/logout', to: 'user#logout'
 end

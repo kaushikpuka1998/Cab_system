@@ -33,6 +33,20 @@ class UserController < ApplicationController
     end
   end
 
+  def logout
+    if session[:user_id].nil?
+      render json: { status: 'ERROR',
+                     message: 'User already Logged Out' }
+      return
+    end
+    session[:user_id] = nil
+    session[:email] = nil
+    session[:name] = nil
+    session[:auth_key] = nil
+    render json: { status: 'SUCCESS', message: 'User logged out successfully' },
+           status: :ok
+  end
+
   private
 
   def user_params
