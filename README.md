@@ -42,17 +42,31 @@ CabsController
 DriverController
 
       #driversController
-        get "/available_drivers", to: "drivers#available_driver" </br>
-        get "/not_available_drivers", to: "drivers#not_available_driver" </br>
-        post "/create_driver", to: "drivers#create_driver"</br>
-        put "/update_driver/:id", to: "drivers#update_driver" </br>
-        get "/cabdetailsbydriverid/:id", to: "drivers#cab_details_by_driver_id" </br>
-        get "/get_order_details_by_driver_id/:id", to: "drivers#get_order_details_by_driver_id" </br>
+        get "/available_drivers", to: "drivers#available_driver" 
+        get "/not_available_drivers", to: "drivers#not_available_driver" 
+        post "/create_driver", to: "drivers#create_driver"
+        put "/update_driver/:id", to: "drivers#update_driver" 
+        get "/cabdetailsbydriverid/:id", to: "drivers#cab_details_by_driver_id" 
+        get "/get_order_details_by_driver_id/:id", to: "drivers#get_order_details_by_driver_id" 
         
 TransactionsController
 
       #transactionsController
-        get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id" </br>
+        get "/last_day_earning_by_driver_id/:id", to: "transaction#last_day_earning_by_driver_id" 
+
+RiderController
+
+     post '/price_calculator', to: 'rider#price_calculator' 
+
+PlaceController
+     
+     post '/create_place', to: 'place#create_place' 
+
+UserController
+       
+       post '/create_user', to: 'user#create_user'
+       post '/login', to: 'user#login' 
+       get '/logout', to: 'user#logout' 
 
 
 <h1> All URL Documentation as Localhost(After installing all the routes will be indicate) </h1>
@@ -85,7 +99,18 @@ TransactionsController
       <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/429f5977-c2a3-449a-8bac-6f1a045f46bf" width="100%" height="50%" />
    </div>
 
+
+   <div> 
+      <h1>Login/Logout/SignUp </h1>
+      <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/2266d78e-cb27-4ea0-9da7-2945dcf97f7a" width="100%" height="50%" />
+      <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/e325c149-b18e-462d-9751-9d56cfa242d7" width="100%" height="50%" />
+      <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/2b988070-7f7b-47b8-96d0-2bec36e3a4ec" width="100%" height="50%" />
+      <img src="https://github.com/kaushikpuka1998/Cab_system/assets/52675676/c025cf2a-f4e0-4711-8e8e-e16607a031c0" width="100%" height="50%" />
+   </div>
+
 </div>
+
+
 
 
 
