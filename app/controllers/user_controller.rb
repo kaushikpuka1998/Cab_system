@@ -12,10 +12,17 @@ class UserController < ApplicationController
   def login
     user = User.find_by_email(params[:email])
 
+    if user&.password_digest == session[:auth_key]
+      render json: { status: 'SUCCESS', message: 'User Already loggedIn',
+                     data: user },
+             status: :ok
+      return
+    end
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       session[:email] = user.email
       session[:name] = user.name
+      session[:auth_key] = user.password_digest
       render json: { status: 'SUCCESS', message: 'User logged in successfully',
                      data: user },
              status: :ok
